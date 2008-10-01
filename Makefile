@@ -1,6 +1,6 @@
 
 all:
-	ocamlbuild ocamlify.otarget
+	ocamlbuild -classic-display ocamlify.otarget
 
 clean:
 	ocamlbuild -clean
