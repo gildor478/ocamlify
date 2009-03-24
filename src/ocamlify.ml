@@ -252,8 +252,17 @@ let () =
           let fd = 
             open_out fl
           in
-            act fd !all_var;
-            close_out fd
+            (
+              try 
+                act fd !all_var;
+                close_out fd
+              with e ->
+                (
+                  close_out fd;
+                  Sys.remove fl;
+                  raise e
+                )
+            )
       | None ->
           act stdout !all_var
 ;;
