@@ -6,7 +6,7 @@ type var_type =
   | VarStringList
 ;;
 
-let version = "0.0.1"
+let version = OCamlifyConfig.version
 ;;
 
 let to_ocaml_string str = 
