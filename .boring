@@ -67,3 +67,6 @@
 \_vti_cnf$
 \_vti_pvt$
 ^_build$
+^setup.log$
+^setup.data$
+^src/OCamlifyConfig.ml$
