@@ -118,8 +118,9 @@ let parse_file =
     failwith ("Don't know what to do with '"^s^"' in file '"^fn^"'")
   in
   let rebase_fn fn_base fn =
+    (* TODO: FilePath.Unix ! *)
     if Filename.is_relative fn then
-      Filename.concat (Filename.dirname fn_base) fn
+      (Filename.dirname fn_base)^"/"^fn
     else
       fn
   in
