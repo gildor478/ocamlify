@@ -1,0 +1,5 @@
+2013-06-25 Sylvain Le Gall <sylvain AT le-gall.net>
+
+  * Version 0.0.2
+  * Use oasis 0.3.0 to regenerate the setup.ml.
+  * Setup continuous integration.
