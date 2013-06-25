@@ -65,9 +65,9 @@ headache:
 
 .PHONY: headache
 
-dist:
+deploy:
 	admin-gallu-deploy --verbose \
 		--forge_upload --forge_group ocamlify --forge_user gildor-admin
 
-.PHONY: dist
+.PHONY: deploy
 
