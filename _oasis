@@ -1,6 +1,6 @@
 OASISFormat: 0.3
 Name:        ocamlify
-Version:     0.0.2
+Version:     0.0.3
 Synopsis:    include files in OCaml code
 Authors:     Sylvain Le Gall
 LicenseFile: COPYING.txt
