@@ -70,3 +70,4 @@
 ^setup.log$
 ^setup.data$
 ^src/OCamlifyConfig.ml$
+^dist$
