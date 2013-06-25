@@ -63,20 +63,11 @@ headache:
 	  -false -o -type f \
 	  | xargs headache -h _header -c _headache.config
 
-dist: setup.data
-	if ! [ "$$(darcs diff | wc -l)" = 0 ]; then \
-	  echo E: Uncommited changes >&2 ; exit 1; \
-	fi
-	$(MAKE) test
-	$(MAKE) dist-step2
+.PHONY: headache
 
--include setup.data
-dist-step2:
-	darcs dist --dist-name $(pkg_name)-$(pkg_version)
-	if ! (darcs query tag | grep "$(pkg_version)" > /dev/null); then \
-	  darcs tag "$(pkg_version)"; \
-	else \
-	  echo W: Version $(pkg_version) already tagged >&2; \
-	fi 
-	gpg -s -a -b "$(pkg_name)-$(pkg_version).tar.gz"
+dist:
+	admin-gallu-deploy --verbose \
+		--forge_upload --forge_group ocamlify --forge_user gildor-admin
+
+.PHONY: dist
 

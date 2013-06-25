@@ -1,5 +1,0 @@
-(* OASIS_START *)
-(* DO NOT EDIT (digest: d1a132a4ab095df48f3d2d499d6c5000) *)
-Authors of ocamlify
-Sylvain Le Gall
-(* OASIS_STOP *)
