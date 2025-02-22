@@ -19,55 +19,41 @@
 #  Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA               #
 ################################################################################
 
-# OASIS_START
-# DO NOT EDIT (digest: bc1e05bfc8b39b664f29dae8dbd3ebbb)
+default: build test
 
-SETUP = ocaml setup.ml
+build:
+	dune build @install
 
-build: setup.data
-	$(SETUP) -build $(BUILDFLAGS)
+doc:
+	dune build @doc
 
-doc: setup.data build
-	$(SETUP) -doc $(DOCFLAGS)
+test:
+	dune runtest
 
-test: setup.data build
-	$(SETUP) -test $(TESTFLAGS)
+all:
+	dune build @all
 
-all: 
-	$(SETUP) -all $(ALLFLAGS)
+install:
+	dune install
 
-install: setup.data
-	$(SETUP) -install $(INSTALLFLAGS)
+uninstall:
+	dune uninstall
 
-uninstall: setup.data
-	$(SETUP) -uninstall $(UNINSTALLFLAGS)
+clean:
+	dune clean
 
-reinstall: setup.data
-	$(SETUP) -reinstall $(REINSTALLFLAGS)
+fmt:
+	dune fmt
 
-clean: 
-	$(SETUP) -clean $(CLEANFLAGS)
-
-distclean: 
-	$(SETUP) -distclean $(DISTCLEANFLAGS)
-
-setup.data:
-	$(SETUP) -configure $(CONFIGUREFLAGS)
-
-.PHONY: build doc test all install uninstall reinstall clean distclean configure
-
-# OASIS_STOP
+lint:
+	opam-dune-lint
+	dune build @fmt
 
 headache:
 	find ./ -name _darcs -prune -false -o -name _build -prune \
 	  -false -o -type f \
 	  | xargs headache -h _header -c _headache.config
 
-.PHONY: headache
+git-pre-commit-hook: test lint
 
-deploy:
-	admin-gallu-deploy --verbose \
-		--forge_upload --forge_group ocamlify --forge_user gildor-admin
-
-.PHONY: deploy
-
+.PHONY: build doc test all install uninstall reinstall clean distclean configure headache lint git-pre-commit-hook

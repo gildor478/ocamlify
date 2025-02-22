@@ -1,0 +1,2 @@
+(cram
+ (deps %{bin:ocamlify} simple_file.ml simple_file.mlify))
