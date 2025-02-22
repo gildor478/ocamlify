@@ -9,7 +9,8 @@
 (source
  (github gildor478/ocamlify))
 
-(authors "Sylvain Le Gall <sylvain+ocaml@le-gall.net>")
+(authors "Sylvain Le Gall")
+(maintainers "Sylvain Le Gall <sylvain+ocaml@le-gall.net>")
 
 (license "LGPL-2.1-or-later WITH OCaml-LGPL-linking-exception")
 
