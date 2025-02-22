@@ -20,9 +20,7 @@
  (synopsis "Include files in OCaml code")
  (description "")
  (depends
-  (camlp-streams
-   (>= 5.0.1))
   (ocaml
    (>= 5))
-  (camlp-streans
+  (camlp-streams
    (>= 5))))

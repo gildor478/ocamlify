@@ -9,9 +9,8 @@ doc: "https://url/to/documentation"
 bug-reports: "https://github.com/gildor478/ocamlify/issues"
 depends: [
   "dune" {>= "3.17"}
-  "camlp-streams" {>= "5.0.1"}
   "ocaml" {>= "5"}
-  "camlp-streans" {>= "5"}
+  "camlp-streams" {>= "5"}
   "odoc" {with-doc}
 ]
 build: [
