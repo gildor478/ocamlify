@@ -47,7 +47,7 @@ let ocamlify fd var_lst =
       with End_of_file -> close_in fi
     in
     fpf "(* Include %s *)\n" file;
-    fpf "let %s = \n" varname;
+    fpf "let %s =\n" varname;
     match vartype with
     | VarString ->
         fpf "  \"\\\n";
