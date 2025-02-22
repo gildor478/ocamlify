@@ -56,4 +56,11 @@ headache:
 
 git-pre-commit-hook: test lint
 
-.PHONY: build doc test all install uninstall reinstall clean distclean configure headache lint git-pre-commit-hook
+deploy: doc test
+	dune-release lint
+	dune-release tag
+	git push --all
+	git push --tag
+	dune-release
+
+.PHONY: build doc test all install uninstall reinstall clean distclean configure headache lint git-pre-commit-hook deploy
