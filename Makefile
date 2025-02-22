@@ -24,9 +24,6 @@ default: build test
 build:
 	dune build @install
 
-doc:
-	dune build @doc
-
 test:
 	dune runtest
 
@@ -56,7 +53,7 @@ headache:
 
 git-pre-commit-hook: test lint
 
-deploy: doc test
+deploy: test lint
 	dune-release lint
 	dune-release tag
 	git push --all
